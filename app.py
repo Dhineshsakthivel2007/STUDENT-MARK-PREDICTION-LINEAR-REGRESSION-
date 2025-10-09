@@ -19,19 +19,17 @@ parental_level_of_education = st.selectbox(
 		"associate's degree", "bachelor's degree", "master's degree"
 	]
 )
-lunch = st.selectbox('Lunch', ['standard', 'free/reduced'])
 test_preparation_course = st.selectbox('Test Preparation Course', ['none', 'completed'])
 math_score = st.slider('Math Score', 0, 100, 50)
 reading_score = st.slider('Reading Score', 0, 100, 50)
 
 # Prepare input for prediction
 input_data = pd.DataFrame({
-	'gender': [gender],
 	'parental level of education': [parental_level_of_education],
-	'lunch': [lunch],
-	'test preparation course': [test_preparation_course],
-	'math score': [math_score],
+    'test preparation course': [test_preparation_course],
 	'reading score': [reading_score]
+    'math score': [math_score],
+	'gender': [gender]
 })
 
 # If your model requires encoding, make sure to preprocess input_data accordingly
