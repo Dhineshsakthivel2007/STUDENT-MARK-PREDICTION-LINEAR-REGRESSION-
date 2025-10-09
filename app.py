@@ -27,6 +27,17 @@ parental_level_of_education = st.selectbox(
     ]
 )
 
+# Map parental education to numeric values
+education_mapping = {
+    "some high school": 0,
+    "high school": 1,
+    "some college": 2,
+    "associate's degree": 3,
+    "bachelor's degree": 4,
+    "master's degree": 5
+}
+parental_level_of_education_encoded = education_mapping[parental_level_of_education]
+
 # Test Preparation Course
 test_preparation_course = st.selectbox(
     "Test Preparation Course",
@@ -40,7 +51,7 @@ writing_score = st.slider("Writing Score", 0, 100, 50)
 
 # --- Prepare input DataFrame ---
 input_data = pd.DataFrame({
-    "parental level of education": [parental_level_of_education],
+    "parental level of education": [parental_level_of_education_encoded],
     "test preparation course_none": [test_preparation_course_none],
     "reading score": [reading_score],
     "writing score": [writing_score],
