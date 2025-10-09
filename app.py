@@ -27,7 +27,7 @@ reading_score = st.slider('Reading Score', 0, 100, 50)
 input_data = pd.DataFrame({
 	'parental level of education': [parental_level_of_education],
     'test preparation course': [test_preparation_course],
-	'reading score': [reading_score]
+	'reading score': [reading_score],
     'math score': [math_score],
 	'gender': [gender]
 })
